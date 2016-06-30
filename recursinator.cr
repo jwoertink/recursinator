@@ -1,10 +1,10 @@
 class Recursinator
 
-  def self.parse(path : String, &block)
+  def self.parse(path : String, &block : String ->)
     self.new.parse(path, &block)
   end
 
-  def parse(path : String, &block)
+  def parse(path : String, &block : String ->)
     Dir.foreach(path) do |item|
       next if item == "." || item == ".."
       item_path = File.join(path, item)
