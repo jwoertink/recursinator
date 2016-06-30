@@ -5,9 +5,9 @@ In the `test.code` file, I am just looking for any file ending in .jpg, and coun
 
 ## Running the test
 
-Ruby `ruby test.code`
+Ruby `ruby test.rb`
 
-Crystal `crystal test.code`
+Crystal `crystal test.cr`
 
 ## Usage
 
