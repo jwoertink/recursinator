@@ -28,3 +28,30 @@ Recursinator.parse("/path/to/folder") do |file|
   # do stuff with file
 end
 ```
+
+## Benchmarking
+ok, so this isn't a great benchmark, but here's some numbers anyway
+
+```
+Ruby
+$ time ruby test.rb
+real  0m0.227s
+user  0m0.112s
+sys 0m0.108s
+```
+
+```
+Crystal (dynamic)
+$ time crystal test.cr
+real  0m0.687s
+user  0m0.534s
+sys 0m0.333s
+```
+
+```
+Crystal (compiled)
+$ crystal build test.cr && time ./test
+real  0m0.190s
+user  0m0.084s
+sys 0m0.110s
+```
