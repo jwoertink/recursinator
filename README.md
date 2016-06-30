@@ -54,7 +54,7 @@ sys   0m0.333s
 
 ```
 Crystal (compiled v 0.18.6)
-$ crystal compile test.cr --release && time ./test
+$ crystal compile test.cr --release -o test.run && time ./test.run
 real  0m0.148s
 user  0m0.038s
 sys   0m0.105s
