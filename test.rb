@@ -1,10 +1,9 @@
 require "./recursinator"
 i = 0
 Recursinator.parse("/Users/jeremywoertink/Sites/stan") do |file|
-  if file.include?(".jpg")
+  if file.include?(".jpg") || file.include?(".png")
     i += 1
-    puts "do you even jpeg, bruh? #{file}"
   end
 end
 
-puts "Found #{i} jpg"
+puts "Found #{i} images"
