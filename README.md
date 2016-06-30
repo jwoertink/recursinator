@@ -30,28 +30,32 @@ end
 ```
 
 ## Benchmarking
-ok, so this isn't a great benchmark, but here's some numbers anyway
+ok, so this isn't a great benchmark, but here's some numbers anyway. This run finds 999 images within my app called "stan". This looks through 3048 directories for jpg and png. Running on MBP 2.7ghz i7 with 16GB ram.
+```
+[10:57AM] stan (master)$ find . -maxdepth 100 -type d | wc -l
+    3048
+```
 
 ```
-Ruby
+Ruby (v 2.3.0)
 $ time ruby test.rb
-real  0m0.227s
-user  0m0.112s
-sys 0m0.108s
+real  0m0.241s
+user  0m0.117s
+sys   0m0.108s
 ```
 
 ```
-Crystal (dynamic)
+Crystal (dynamic v 0.18.6)
 $ time crystal test.cr
 real  0m0.687s
 user  0m0.534s
-sys 0m0.333s
+sys   0m0.333s
 ```
 
 ```
-Crystal (compiled)
-$ crystal build test.cr && time ./test
-real  0m0.190s
-user  0m0.084s
-sys 0m0.110s
+Crystal (compiled v 0.18.6)
+$ crystal compile test.cr --release && time ./test
+real  0m0.148s
+user  0m0.038s
+sys   0m0.105s
 ```
